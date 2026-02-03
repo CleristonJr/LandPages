@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleriston Jr. | Soluções Web em Jacobina</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Poppins', sans-serif; background-color: #f8f9fa; }
+        
+        /* Cores e Estilos Personalizados */
+        :root {
+            --primary-color: #0d6efd;
+            --accent-color: #0a58ca;
+            --whatsapp-color: #25D366;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 100px 0 80px;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+        
+        .hero h1 { font-weight: 700; font-size: 2.5rem; }
+        .hero p { font-size: 1.2rem; opacity: 0.9; }
+
+        /* Cards de Serviço e Projeto */
+        .card {
+            border: none;
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            height: 100%;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .icon-box {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        /* Botão Flutuante do WhatsApp */
+        .zap-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: var(--whatsapp-color);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            transition: transform 0.3s;
+            text-decoration: none;
+        }
+        .zap-float:hover { transform: scale(1.1); color: white; }
+
+        /* Footer */
+        footer { background-color: #212529; color: #aaa; padding: 40px 0; }
+        footer a { color: white; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#"><i class="fas fa-code me-2"></i>Cleriston Jr.</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfólio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre Mim</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-primary text-white ms-2 px-3" href="https://wa.me/5574998125314?text=Ol%C3%A1%20Cleriston,%20gostaria%20de%20um%20or%C3%A7amento." target="_blank">Fale Comigo</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero text-center d-flex align-items-center">
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <span class="badge bg-light text-primary mb-3 px-3 py-2 rounded-pill">Desenvolvimento Web Profissional</span>
+                    <h1 class="mb-4">Seu negócio precisa vender mais.<br>Eu construo a ferramenta para isso.</h1>
+                    <p class="mb-5">Criação de Landing Pages de alta conversão, Sites Institucionais e Sistemas Web. Atendimento exclusivo em Jacobina e Região.</p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="#portfolio" class="btn btn-light btn-lg text-primary fw-bold shadow">Ver Projetos</a>
+                        <a href="https://wa.me/5574998125314" target="_blank" class="btn btn-outline-light btn-lg"><i class="fab fa-whatsapp me-2"></i>Chamar no Zap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h6 class="text-primary fw-bold text-uppercase">O que eu faço</h6>
+                <h2 class="fw-bold">Soluções Digitais Completas</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card p-4 text-center">
+                        <div class="icon-box"><i class="fas fa-rocket"></i></div>
+                        <h4>Landing Pages</h4>
+                        <p class="text-muted">Páginas focadas em uma única coisa: transformar visitantes em clientes no WhatsApp. Ideal para lançamentos e profissionais liberais.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-4 text-center">
+                        <div class="icon-box"><i class="fas fa-store"></i></div>
+                        <h4>Sites Institucionais</h4>
+                        <p class="text-muted">A vitrine oficial da sua empresa. Design moderno, responsivo (funciona no celular) e otimizado para aparecer no Google.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-4 text-center">
+                        <div class="icon-box"><i class="fas fa-database"></i></div>
+                        <h4>Sistemas & Automação</h4>
+                        <p class="text-muted">Precisa de algo mais complexo? Desenvolvimento de painéis, integração de APIs e automações customizadas com Node.js.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-5 bg-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h6 class="text-primary fw-bold text-uppercase">Portfólio</h6>
+                <h2 class="fw-bold">Projetos em Destaque</h2>
+            </div>
+            <div class="row g-4">
+                
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div style="height: 200px; background-color: #ddd; display: flex; align-items: center; justify-content: center; color: #666;">
+                            <i class="fas fa-school fa-3x"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Escola Infantil Criativa</h5>
+                            <span class="badge bg-info text-dark mb-2">Design Visual</span>
+                            <span class="badge bg-warning text-dark mb-2">Identidade</span>
+                            <p class="card-text small mt-2">Criação de identidade visual e sinalização interna para ambiente escolar, focado em acolhimento e comunicação clara.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div style="height: 200px; background-color: #ddd; display: flex; align-items: center; justify-content: center; color: #666;">
+                            <i class="fas fa-tooth fa-3x"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Dr. Sorriso - Implantes</h5>
+                            <span class="badge bg-primary mb-2">Landing Page</span>
+                            <span class="badge bg-success mb-2">Alta Conversão</span>
+                            <p class="card-text small mt-2">Página de captura otimizada para campanhas de Instagram. Foco em agendamento direto pelo WhatsApp.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div style="height: 200px; background-color: #ddd; display: flex; align-items: center; justify-content: center; color: #666;">
+                            <i class="fas fa-snowflake fa-3x"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">ClimaTec Jacobina</h5>
+                            <span class="badge bg-dark mb-2">Site Local</span>
+                            <span class="badge bg-secondary mb-2">SEO Local</span>
+                            <p class="card-text small mt-2">Site institucional para empresa de refrigeração, com mapa integrado e botão de emergência técnica.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2 class="fw-bold mb-3">Quem é <span class="text-primary">Cleriston Jr.?</span></h2>
+                    <p class="lead">Analista de Suporte e Desenvolvedor com 10 anos de experiência.</p>
+                    <p>Moro em Jacobina-BA e combino minha experiência técnica sólida (formando em Ciência da Computação) com uma visão prática de negócios.</p>
+                    <p>Meu diferencial não é apenas "escrever código", mas entender a necessidade do seu negócio e entregar uma solução que funcione, sem enrolação e com suporte próximo.</p>
+                    
+                    <div class="mt-4">
+                        <p><i class="fas fa-check-circle text-success me-2"></i> Graduando em Ciência da Computação (Dez/25)</p>
+                        <p><i class="fas fa-check-circle text-success me-2"></i> Experiência em Redes, Suporte e Web</p>
+                        <p><i class="fas fa-check-circle text-success me-2"></i> Projetos entregues com qualidade</p>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center">
+                    <i class="fas fa-laptop-code text-primary" style="font-size: 150px; opacity: 0.2;"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center">
+        <div class="container">
+            <h3 class="fw-bold text-white mb-4">Vamos tirar seu projeto do papel?</h3>
+            <p class="mb-4">Entre em contato agora mesmo e peça um orçamento sem compromisso.</p>
+            <div class="mb-4">
+                <a href="https://www.linkedin.com/in/cleriston-j%C3%BAnior-ba419218b" target="_blank" class="mx-2 fs-4"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:cleristonjr1999@gmail.com" class="mx-2 fs-4"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/seu-usuario" target="_blank" class="mx-2 fs-4"><i class="fab fa-github"></i></a>
+            </div>
+            <p class="small text-muted">&copy; 2026 Cleriston Jr. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5574998125314?text=Ol%C3%A1%20Cleriston,%20vi%20seu%20site%20e%20gostaria%20de%20saber%20mais." class="zap-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
