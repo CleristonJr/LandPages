@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Giants | Educação Bilíngue</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #FF8F5C;   /* Laranja Suave */
+            --secondary: #4BC6B9; /* Verde Água */
+            --accent: #FFD93D;    /* Amarelo Sol */
+            --text: #4A4A4A;
+        }
+        body { font-family: 'Quicksand', sans-serif; color: var(--text); background-color: #FFFDF9; }
+        h1, h2, h3, h4 { font-family: 'Nunito', sans-serif; font-weight: 800; }
+        
+        .navbar { background-color: white; box-shadow: 0 4px 20px rgba(0,0,0,0.05); padding: 15px 0; }
+        .nav-link { font-weight: 700; color: var(--text); margin: 0 10px; }
+        .btn-cta { background-color: var(--primary); color: white; border-radius: 50px; padding: 12px 30px; font-weight: 700; transition: transform 0.3s; border: none; }
+        .btn-cta:hover { transform: translateY(-3px); background-color: #ff7a3d; color: white; }
+
+        .hero { 
+            padding: 120px 0 80px; 
+            background: linear-gradient(135deg, #FFF6F0 0%, #E8F8F7 100%);
+            border-bottom-left-radius: 80px;
+        }
+
+        .card-feature {
+            background: white;
+            border: none;
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 40px rgba(75, 198, 185, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        .card-feature:hover { transform: translateY(-10px); box-shadow: 0 15px 50px rgba(75, 198, 185, 0.2); }
+        .icon-bg {
+            width: 80px; height: 80px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 30px; margin-bottom: 25px;
+        }
+
+        .img-hero-frame {
+            border-radius: 30px 0 30px 0;
+            box-shadow: 20px 20px 0px var(--secondary);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3 text-secondary" href="#"><i class="fas fa-shapes me-2"></i>Little<span style="color:var(--primary)">Giants</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#">Pedagogia</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Estrutura</a></li>
+                    <li class="nav-item ms-3"><a href="#" class="btn btn-cta">Agendar Visita</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero d-flex align-items-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <span class="badge bg-secondary bg-opacity-10 text-secondary px-3 py-2 rounded-pill mb-3 fw-bold">Matrículas 2026 Abertas ✏️</span>
+                    <h1 class="display-4 mb-4" style="line-height: 1.2;">O futuro do seu filho começa com <span style="color:var(--primary)">afeto e inovação.</span></h1>
+                    <p class="lead mb-5 opacity-75">Uma escola bilíngue que une a metodologia montessoriana com a tecnologia, preparando pequenos gigantes para o mundo.</p>
+                    <div class="d-flex gap-3">
+                        <button class="btn btn-cta shadow-lg">Conhecer Proposta</button>
+                        <button class="btn btn-outline-secondary rounded-pill px-4 fw-bold">Ver Vídeo</button>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=800&q=80" class="img-fluid img-hero-frame" alt="Crianças estudando">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-5 my-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card-feature text-center">
+                        <div class="icon-bg mx-auto" style="background: #FFF0E6; color: var(--primary);"><i class="fas fa-comments"></i></div>
+                        <h4>Imersão em Inglês</h4>
+                        <p class="text-muted">Seu filho aprende o segundo idioma naturalmente, vivenciando a língua na rotina diária.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-feature text-center">
+                        <div class="icon-bg mx-auto" style="background: #E0F7FA; color: var(--secondary);"><i class="fas fa-brain"></i></div>
+                        <h4>Socioemocional</h4>
+                        <p class="text-muted">Foco no desenvolvimento da inteligência emocional, autonomia e empatia desde cedo.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-feature text-center">
+                        <div class="icon-bg mx-auto" style="background: #FFF9C4; color: #FBC02D;"><i class="fas fa-utensils"></i></div>
+                        <h4>Nutrição Orgânica</h4>
+                        <p class="text-muted">Refeições balanceadas preparadas na escola com ingredientes frescos e saudáveis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-4 text-muted small">
+        <p>&copy; 2026 Little Giants School. Desenvolvido por Cleriston Jr.</p>
+    </footer>
+</body>
+</html>

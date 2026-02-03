@@ -3,69 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cleriston Jr. | Desenvolvimento Web & Landing Pages</title>
+    <title>Cleriston Jr. | Developer & Strategist</title>
     
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
-        body { font-family: 'Poppins', sans-serif; background-color: #f8f9fa; }
-        
-        /* Cores e Estilos Personalizados */
+        /* --- CONFIGURAÇÕES GERAIS --- */
         :root {
-            --primary-color: #0d6efd;
-            --accent-color: #0a58ca;
-            --whatsapp-color: #25D366;
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --primary: #3b82f6;
+            --accent: #8b5cf6;
+            --text-light: #f8fafc;
+            --text-gray: #94a3b8;
         }
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-            color: white;
-            padding: 100px 0 80px;
-            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            overflow-x: hidden;
         }
-        
-        .hero h1 { font-weight: 700; font-size: 2.5rem; }
-        .hero p { font-size: 1.2rem; opacity: 0.9; }
 
-        /* Cards */
-        .card {
-            border: none;
-            border-radius: 15px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        /* --- GRADIENTES E EFEITOS --- */
+        .text-gradient {
+            background: linear-gradient(to right, #3b82f6, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            transition: all 0.4s ease;
             height: 100%;
         }
+
+        a.card-link { text-decoration: none; color: inherit; display: block; height: 100%; }
         
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        a.card-link:hover .glass-card {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.3);
         }
 
-        .icon-box {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
+        /* --- BOTÕES --- */
+        .btn-glow {
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s;
         }
 
-        /* Foto de Perfil */
+        .btn-glow:hover {
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+            transform: scale(1.05);
+            color: white;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero-section {
+            padding: 160px 0 100px;
+            position: relative;
+        }
+
+        .blob {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(59,130,246,0.2) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+            z-index: -1;
+            top: -100px;
+            left: -100px;
+            animation: moveBlob 10s infinite alternate;
+        }
+        .blob-2 {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(139,92,246,0.2) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+            z-index: -1;
+            bottom: 0;
+            right: 0;
+        }
+
+        @keyframes moveBlob {
+            from { transform: translate(0, 0); }
+            to { transform: translate(50px, 50px); }
+        }
+
+        /* --- FOTO DE PERFIL --- */
+        .profile-frame {
+            position: relative;
+            width: 280px;
+            height: 280px;
+            margin: 0 auto;
+        }
+        
         .profile-img {
-            width: 250px;
-            height: 250px;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
             border-radius: 50%;
-            border: 5px solid white;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            border: 4px solid rgba(255,255,255,0.1);
+            position: relative;
+            z-index: 2;
         }
 
-        /* Botão Flutuante do WhatsApp */
+        .profile-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            border-radius: 50%;
+            filter: blur(20px);
+            z-index: 1;
+            opacity: 0.6;
+            animation: pulseGlow 3s infinite alternate;
+        }
+
+        @keyframes pulseGlow {
+            from { opacity: 0.5; transform: translate(-50%, -50%) scale(0.95); }
+            to { opacity: 0.8; transform: translate(-50%, -50%) scale(1.05); }
+        }
+
+        /* --- PORTFOLIO IMAGENS (Atualizado para Prints) --- */
+        .project-img-wrapper {
+            height: 220px; /* Altura fixa do cartão */
+            overflow: hidden;
+            border-radius: 16px 16px 0 0;
+            position: relative;
+            background-color: #0f172a;
+        }
+        
+        .project-thumb {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Cobre todo o espaço */
+            object-position: top center; /* FOCA NO TOPO DO SITE (Menu/Header) */
+            transition: transform 0.5s ease;
+            opacity: 0.9;
+        }
+        
+        a.card-link:hover .project-thumb {
+            transform: scale(1.05); /* Zoom suave ao passar o mouse */
+            opacity: 1;
+        }
+
+        /* --- CONTATO E FOOTER --- */
         .zap-float {
             position: fixed;
-            bottom: 25px;
-            right: 25px;
-            background-color: var(--whatsapp-color);
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
             color: white;
             width: 60px;
             height: 60px;
@@ -73,47 +185,65 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-            z-index: 1000;
+            font-size: 32px;
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
+            z-index: 999;
             transition: transform 0.3s;
-            text-decoration: none;
         }
         .zap-float:hover { transform: scale(1.1); color: white; }
-
-        footer { background-color: #212529; color: #aaa; padding: 40px 0; }
-        footer a { color: white; text-decoration: none; }
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="blob"></div>
+    <div class="blob-2"></div>
+
+    <nav class="navbar navbar-expand-lg fixed-top glass-nav navbar-dark">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#"><i class="fas fa-code me-2"></i>Cleriston Jr.</a>
+            <a class="navbar-brand fw-bold" href="#">Cleriston<span class="text-primary">.Dev</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfólio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre Mim</a></li>
-                    <li class="nav-item"><a class="nav-link btn btn-primary text-white ms-2 px-3" href="https://wa.me/5574998125314?text=Ol%C3%A1%20Cleriston,%20gostaria%20de%20um%20or%C3%A7amento." target="_blank">Fale Comigo</a></li>
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link text-light" href="#servicos">O que faço</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="#portfolio">Projetos</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="#sobre">Sobre</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a href="https://wa.me/5574998125314" class="btn btn-outline-light rounded-pill px-4">Falar no Zap</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <section class="hero text-center d-flex align-items-center">
-        <div class="container mt-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <span class="badge bg-light text-primary mb-3 px-3 py-2 rounded-pill">Desenvolvimento Web Profissional</span>
-                    <h1 class="mb-4">Seu negócio precisa vender mais.<br>Eu construo a ferramenta para isso.</h1>
-                    <p class="mb-5">Criação de Landing Pages de alta conversão, Sites Institucionais e Sistemas Web. Atendimento remoto para empresas de todo o Brasil.</p>
-                    <div class="d-flex justify-content-center gap-3">
-                        <a href="#portfolio" class="btn btn-light btn-lg text-primary fw-bold shadow">Ver Projetos</a>
-                        <a href="https://wa.me/5574998125314" target="_blank" class="btn btn-outline-light btn-lg"><i class="fab fa-whatsapp me-2"></i>Chamar no Zap</a>
+    <section class="hero-section d-flex align-items-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7" data-aos="fade-right">
+                    <div class="d-inline-block px-3 py-1 mb-3 border border-secondary rounded-pill text-gray small">
+                        🚀 Disponível para novos projetos
+                    </div>
+                    <h1 class="display-3 fw-bold mb-3">
+                        Não tenha apenas um site. <br>
+                        Tenha uma <span class="text-gradient">Máquina de Vendas.</span>
+                    </h1>
+                    <p class="lead text-gray mb-5">
+                        Desenvolvo Landing Pages de alta conversão e Sistemas Web que transformam visitantes em clientes. Design premium, velocidade máxima e foco em resultado.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="#portfolio" class="btn btn-glow">Ver Portfólio</a>
+                        <a href="#servicos" class="btn btn-outline-light rounded-pill px-4 py-2">Como funciona?</a>
+                    </div>
+                </div>
+                <div class="col-lg-5 text-center mt-5 mt-lg-0" data-aos="fade-left">
+                    <div class="profile-frame">
+                        <div class="profile-glow"></div>
+                        <img src="perfil.jpg" alt="Cleriston Jr." class="profile-img" onerror="this.src='https://cdn-icons-png.flaticon.com/512/4140/4140048.png'">
+                    </div>
+                    <div class="mt-4 text-center">
+                        <h5 class="fw-bold m-0">Cleriston Jr.</h5>
+                        <p class="text-primary small">Fullstack Developer</p>
                     </div>
                 </div>
             </div>
@@ -122,122 +252,147 @@
 
     <section id="servicos" class="py-5">
         <div class="container">
-            <div class="text-center mb-5">
-                <h6 class="text-primary fw-bold text-uppercase">O que eu faço</h6>
-                <h2 class="fw-bold">Soluções Digitais Completas</h2>
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h6 class="text-primary fw-bold text-uppercase ls-2">Expertise</h6>
+                <h2 class="fw-bold display-6">Como eu ajudo seu negócio</h2>
             </div>
             <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="card p-4 text-center">
-                        <div class="icon-box"><i class="fas fa-rocket"></i></div>
-                        <h4>Landing Pages</h4>
-                        <p class="text-muted">Páginas focadas em uma única coisa: transformar visitantes em clientes no WhatsApp. Ideal para lançamentos e profissionais liberais.</p>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="glass-card p-4">
+                        <i class="fas fa-rocket fa-3x text-gradient mb-4"></i>
+                        <h4 class="fw-bold">Landing Pages</h4>
+                        <p class="text-gray">Páginas únicas, desenhadas psicologicamente para vender. Carregamento ultra-rápido e botões de WhatsApp estratégicos.</p>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card p-4 text-center">
-                        <div class="icon-box"><i class="fas fa-store"></i></div>
-                        <h4>Sites Institucionais</h4>
-                        <p class="text-muted">A vitrine oficial da sua empresa. Design moderno, responsivo (funciona no celular) e otimizado para aparecer no Google.</p>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="glass-card p-4">
+                        <i class="fas fa-laptop-code fa-3x text-gradient mb-4"></i>
+                        <h4 class="fw-bold">Sites Institucionais</h4>
+                        <p class="text-gray">Eleve a autoridade da sua marca. Um site institucional moderno, responsivo (mobile-first) e pronto para o Google (SEO).</p>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card p-4 text-center">
-                        <div class="icon-box"><i class="fas fa-database"></i></div>
-                        <h4>Sistemas & Automação</h4>
-                        <p class="text-muted">Precisa de algo mais complexo? Desenvolvimento de painéis, integração de APIs e automações customizadas com Node.js.</p>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="glass-card p-4">
+                        <i class="fas fa-cogs fa-3x text-gradient mb-4"></i>
+                        <h4 class="fw-bold">Sistemas Web</h4>
+                        <p class="text-gray">Dashboard, painéis administrativos e automações. Soluções complexas simplificadas com tecnologia de ponta.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="portfolio" class="py-5 bg-white">
+    <section id="portfolio" class="py-5">
         <div class="container">
-            <div class="text-center mb-5">
-                <h6 class="text-primary fw-bold text-uppercase">Portfólio</h6>
-                <h2 class="fw-bold">Projetos em Destaque</h2>
+            <div class="d-flex justify-content-between align-items-end mb-5" data-aos="fade-right">
+                <div>
+                    <h6 class="text-primary fw-bold text-uppercase">Portfólio</h6>
+                    <h2 class="fw-bold display-6">Trabalhos Selecionados</h2>
+                </div>
+                <span class="text-gray small d-none d-md-block">Clique nos cartões para visitar os sites</span>
             </div>
+
             <div class="row g-4">
                 
-                <div class="col-md-4">
-                    <div class="card h-100">
-                        <div style="height: 200px; background-color: #ddd; display: flex; align-items: center; justify-content: center; color: #666;">
-                            <i class="fas fa-school fa-3x"></i>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                    <a href="./escola" target="_blank" class="card-link" title="Visitar site">
+                        <div class="glass-card overflow-hidden">
+                            <div class="project-img-wrapper">
+                                <img src="print-escola.jpg" alt="Site Escola Infantil" class="project-thumb">
+                            </div>
+                            <div class="p-4">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <span class="badge bg-primary bg-opacity-10 text-primary">Identidade Visual</span>
+                                    <i class="fas fa-external-link-alt text-gray small"></i>
+                                </div>
+                                <h5 class="fw-bold">Escola Infantil Criativa</h5>
+                                <p class="text-gray small">Reformulação completa da comunicação visual e sinalização interna para ambiente educacional.</p>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold">Escola Infantil Criativa</h5>
-                            <span class="badge bg-info text-dark mb-2">Design Visual</span>
-                            <span class="badge bg-warning text-dark mb-2">Identidade</span>
-                            <p class="card-text small mt-2">Criação de identidade visual e sinalização interna para ambiente escolar, focado em acolhimento e comunicação clara.</p>
-                        </div>
-                    </div>
+                    </a>
                 </div>
 
-                <div class="col-md-4">
-                    <div class="card h-100">
-                        <div style="height: 200px; background-color: #ddd; display: flex; align-items: center; justify-content: center; color: #666;">
-                            <i class="fas fa-tooth fa-3x"></i>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                    <a href="./dentista" target="_blank" class="card-link" title="Visitar site">
+                        <div class="glass-card overflow-hidden">
+                            <div class="project-img-wrapper">
+                                <img src="print-dentista.jpg" alt="Site Dentista" class="project-thumb">
+                            </div>
+                            <div class="p-4">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <span class="badge bg-primary bg-opacity-10 text-primary">Landing Page</span>
+                                    <i class="fas fa-external-link-alt text-gray small"></i>
+                                </div>
+                                <h5 class="fw-bold">Dr. Sorriso Implantes</h5>
+                                <p class="text-gray small">Página de alta conversão focada em agendamento via WhatsApp para tratamentos de alto valor.</p>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold">Dr. Sorriso - Implantes</h5>
-                            <span class="badge bg-primary mb-2">Landing Page</span>
-                            <span class="badge bg-success mb-2">Alta Conversão</span>
-                            <p class="card-text small mt-2">Página de captura otimizada para campanhas de Instagram. Foco em agendamento direto pelo WhatsApp.</p>
-                        </div>
-                    </div>
+                    </a>
                 </div>
 
-                <div class="col-md-4">
-                    <div class="card h-100">
-                        <div style="height: 200px; background-color: #ddd; display: flex; align-items: center; justify-content: center; color: #666;">
-                            <i class="fas fa-snowflake fa-3x"></i>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+                    <a href="./refrigeracao" target="_blank" class="card-link" title="Visitar site">
+                        <div class="glass-card overflow-hidden">
+                            <div class="project-img-wrapper">
+                                <img src="print-refrigeracao.jpg" alt="Site Refrigeração" class="project-thumb">
+                            </div>
+                            <div class="p-4">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <span class="badge bg-primary bg-opacity-10 text-primary">Site Local</span>
+                                    <i class="fas fa-external-link-alt text-gray small"></i>
+                                </div>
+                                <h5 class="fw-bold">ClimaTec Refrigeração</h5>
+                                <p class="text-gray small">Site institucional otimizado para SEO local e Google Maps, aumentando chamados técnicos.</p>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold">ClimaTec Refrigeração</h5>
-                            <span class="badge bg-dark mb-2">Site Local</span>
-                            <span class="badge bg-secondary mb-2">SEO Local</span>
-                            <p class="card-text small mt-2">Site institucional para empresa de refrigeração, com mapa integrado e botão de emergência técnica.</p>
-                        </div>
-                    </div>
+                    </a>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <section id="sobre" class="py-5 bg-light">
+    <section id="sobre" class="py-5">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6 order-md-2 mb-4 mb-md-0 text-center">
-                    <img src="perfil.jpg" alt="Foto de Cleriston Jr." class="profile-img" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png'">
-                </div>
-                <div class="col-md-6 order-md-1">
-                    <h2 class="fw-bold mb-3">Quem é <span class="text-primary">Cleriston Jr.?</span></h2>
-                    <p class="lead">Analista de Suporte e Desenvolvedor com 10 anos de experiência.</p>
-                    <p>Combino minha experiência técnica sólida em Ciência da Computação com uma visão prática de negócios.</p>
-                    <p>Meu diferencial não é apenas "escrever código", mas entender a necessidade do seu negócio e entregar uma solução que funcione, sem enrolação e com suporte próximo, não importa em qual estado do Brasil você esteja.</p>
-                    
-                    <div class="mt-4">
-                        <p><i class="fas fa-check-circle text-success me-2"></i> Formação em Ciência da Computação</p>
-                        <p><i class="fas fa-check-circle text-success me-2"></i> Experiência em Redes, Suporte e Web</p>
-                        <p><i class="fas fa-check-circle text-success me-2"></i> Projetos entregues com qualidade</p>
+            <div class="glass-card p-5" data-aos="fade-up">
+                <div class="row align-items-center">
+                    <div class="col-md-6 mb-4 mb-md-0">
+                        <h2 class="fw-bold mb-4">Sobre Mim</h2>
+                        <p class="text-gray mb-4">
+                            Sou <strong class="text-light">Cleriston Jr.</strong>, um desenvolvedor apaixonado por resolver problemas reais. Com 10 anos de experiência em tecnologia, minha missão saiu do suporte técnico para o desenvolvimento de soluções que alavancam negócios.
+                        </p>
+                        <p class="text-gray mb-4">
+                            Não entrego apenas código. Entrego estratégia, performance e um parceiro tecnológico que entende que o seu site precisa pagar as contas e gerar lucro.
+                        </p>
+                        <div class="d-flex gap-4 text-primary fs-4">
+                            <i class="fab fa-js" title="JavaScript"></i>
+                            <i class="fab fa-node" title="Node.js"></i>
+                            <i class="fab fa-html5" title="HTML5"></i>
+                            <i class="fas fa-database" title="Database"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-center border-start border-secondary ps-md-5">
+                        <h3 class="display-1 fw-bold text-gradient">10+</h3>
+                        <p class="text-gray text-uppercase ls-2">Anos de Experiência</p>
+                        <hr class="border-secondary my-4">
+                        <h3 class="display-4 fw-bold text-light">100%</h3>
+                        <p class="text-gray text-uppercase ls-2">Foco no Cliente</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="text-center">
+    <footer class="py-5 text-center mt-5" style="border-top: 1px solid rgba(255,255,255,0.05);">
         <div class="container">
-            <h3 class="fw-bold text-white mb-4">Vamos tirar seu projeto do papel?</h3>
-            <p class="mb-4">Entre em contato agora mesmo e peça um orçamento sem compromisso.</p>
-            <div class="mb-4">
-                <a href="https://www.linkedin.com/in/cleriston-j%C3%BAnior-ba419218b" target="_blank" class="mx-2 fs-4"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:cleristonjr1999@gmail.com" class="mx-2 fs-4"><i class="fas fa-envelope"></i></a>
-                <a href="https://github.com/seu-usuario" target="_blank" class="mx-2 fs-4"><i class="fab fa-github"></i></a>
+            <h2 class="fw-bold mb-4">Vamos construir algo incrível?</h2>
+            <a href="https://wa.me/5574998125314?text=Ol%C3%A1,%20quero%20um%20or%C3%A7amento%20para%20meu%20site." class="btn btn-glow btn-lg px-5">Solicitar Orçamento</a>
+            
+            <div class="mt-5 d-flex justify-content-center gap-4">
+                <a href="https://www.linkedin.com/in/cleriston-j%C3%BAnior-ba419218b" target="_blank" class="text-gray hover-white"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="mailto:cleristonjr1999@gmail.com" class="text-gray hover-white"><i class="fas fa-envelope fa-2x"></i></a>
             </div>
-            <p class="small text-muted">&copy; 2026 Cleriston Jr. Soluções Digitais.</p>
+            <p class="text-gray small mt-4 opacity-50">&copy; 2026 Cleriston Jr. Todos os direitos reservados.</p>
         </div>
     </footer>
 
@@ -246,5 +401,9 @@
     </a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true, offset: 100 });
+    </script>
 </body>
 </html>
