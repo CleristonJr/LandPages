@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cleriston Jr. | Soluções Web em Jacobina</title>
+    <title>Cleriston Jr. | Desenvolvimento Web & Landing Pages</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -30,7 +30,7 @@
         .hero h1 { font-weight: 700; font-size: 2.5rem; }
         .hero p { font-size: 1.2rem; opacity: 0.9; }
 
-        /* Cards de Serviço e Projeto */
+        /* Cards */
         .card {
             border: none;
             border-radius: 15px;
@@ -48,6 +48,16 @@
             font-size: 2.5rem;
             color: var(--primary-color);
             margin-bottom: 20px;
+        }
+
+        /* Foto de Perfil */
+        .profile-img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
         }
 
         /* Botão Flutuante do WhatsApp */
@@ -71,7 +81,6 @@
         }
         .zap-float:hover { transform: scale(1.1); color: white; }
 
-        /* Footer */
         footer { background-color: #212529; color: #aaa; padding: 40px 0; }
         footer a { color: white; text-decoration: none; }
     </style>
@@ -101,7 +110,7 @@
                 <div class="col-lg-8">
                     <span class="badge bg-light text-primary mb-3 px-3 py-2 rounded-pill">Desenvolvimento Web Profissional</span>
                     <h1 class="mb-4">Seu negócio precisa vender mais.<br>Eu construo a ferramenta para isso.</h1>
-                    <p class="mb-5">Criação de Landing Pages de alta conversão, Sites Institucionais e Sistemas Web. Atendimento exclusivo em Jacobina e Região.</p>
+                    <p class="mb-5">Criação de Landing Pages de alta conversão, Sites Institucionais e Sistemas Web. Atendimento remoto para empresas de todo o Brasil.</p>
                     <div class="d-flex justify-content-center gap-3">
                         <a href="#portfolio" class="btn btn-light btn-lg text-primary fw-bold shadow">Ver Projetos</a>
                         <a href="https://wa.me/5574998125314" target="_blank" class="btn btn-outline-light btn-lg"><i class="fab fa-whatsapp me-2"></i>Chamar no Zap</a>
@@ -185,7 +194,7 @@
                             <i class="fas fa-snowflake fa-3x"></i>
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title fw-bold">ClimaTec Jacobina</h5>
+                            <h5 class="card-title fw-bold">ClimaTec Refrigeração</h5>
                             <span class="badge bg-dark mb-2">Site Local</span>
                             <span class="badge bg-secondary mb-2">SEO Local</span>
                             <p class="card-text small mt-2">Site institucional para empresa de refrigeração, com mapa integrado e botão de emergência técnica.</p>
@@ -200,20 +209,20 @@
     <section id="sobre" class="py-5 bg-light">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-md-6">
+                <div class="col-md-6 order-md-2 mb-4 mb-md-0 text-center">
+                    <img src="perfil.jpg" alt="Foto de Cleriston Jr." class="profile-img" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png'">
+                </div>
+                <div class="col-md-6 order-md-1">
                     <h2 class="fw-bold mb-3">Quem é <span class="text-primary">Cleriston Jr.?</span></h2>
                     <p class="lead">Analista de Suporte e Desenvolvedor com 10 anos de experiência.</p>
-                    <p>Moro em Jacobina-BA e combino minha experiência técnica sólida (formando em Ciência da Computação) com uma visão prática de negócios.</p>
-                    <p>Meu diferencial não é apenas "escrever código", mas entender a necessidade do seu negócio e entregar uma solução que funcione, sem enrolação e com suporte próximo.</p>
+                    <p>Combino minha experiência técnica sólida em Ciência da Computação com uma visão prática de negócios.</p>
+                    <p>Meu diferencial não é apenas "escrever código", mas entender a necessidade do seu negócio e entregar uma solução que funcione, sem enrolação e com suporte próximo, não importa em qual estado do Brasil você esteja.</p>
                     
                     <div class="mt-4">
-                        <p><i class="fas fa-check-circle text-success me-2"></i> Graduando em Ciência da Computação (Dez/25)</p>
+                        <p><i class="fas fa-check-circle text-success me-2"></i> Formação em Ciência da Computação</p>
                         <p><i class="fas fa-check-circle text-success me-2"></i> Experiência em Redes, Suporte e Web</p>
                         <p><i class="fas fa-check-circle text-success me-2"></i> Projetos entregues com qualidade</p>
                     </div>
-                </div>
-                <div class="col-md-6 text-center">
-                    <i class="fas fa-laptop-code text-primary" style="font-size: 150px; opacity: 0.2;"></i>
                 </div>
             </div>
         </div>
@@ -228,7 +237,7 @@
                 <a href="mailto:cleristonjr1999@gmail.com" class="mx-2 fs-4"><i class="fas fa-envelope"></i></a>
                 <a href="https://github.com/seu-usuario" target="_blank" class="mx-2 fs-4"><i class="fab fa-github"></i></a>
             </div>
-            <p class="small text-muted">&copy; 2026 Cleriston Jr. Todos os direitos reservados.</p>
+            <p class="small text-muted">&copy; 2026 Cleriston Jr. Soluções Digitais.</p>
         </div>
     </footer>
 
