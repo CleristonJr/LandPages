@@ -53,5 +53,14 @@ var swiper = new Swiper(".mySwiper", {
     }
 });
 
-// Initialize AOS
-AOS.init({ duration: 1000, once: true, offset: 100 });
+
+// Initialize AOS (Animate On Scroll)
+AOS.init({
+    duration: 1000,
+    once: true,
+    offset: 100,
+    disable: function () {
+        // Disable on mobile/tablet (< 992px)
+        return window.innerWidth < 992;
+    }
+});
