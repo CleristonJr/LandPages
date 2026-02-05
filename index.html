@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cleriston Jr. | Developer & Strategist</title>
-    
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <style>
         /* --- CONFIGURAÇÕES GERAIS --- */
@@ -51,8 +55,13 @@
             height: 100%;
         }
 
-        a.card-link { text-decoration: none; color: inherit; display: block; height: 100%; }
-        
+        a.card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            height: 100%;
+        }
+
         a.card-link:hover .glass-card {
             transform: translateY(-10px);
             border-color: var(--primary);
@@ -88,18 +97,19 @@
             position: absolute;
             width: 500px;
             height: 500px;
-            background: radial-gradient(circle, rgba(59,130,246,0.2) 0%, rgba(0,0,0,0) 70%);
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
             border-radius: 50%;
             z-index: -1;
             top: -100px;
             left: -100px;
             animation: moveBlob 10s infinite alternate;
         }
+
         .blob-2 {
             position: absolute;
             width: 400px;
             height: 400px;
-            background: radial-gradient(circle, rgba(139,92,246,0.2) 0%, rgba(0,0,0,0) 70%);
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
             border-radius: 50%;
             z-index: -1;
             bottom: 0;
@@ -107,8 +117,13 @@
         }
 
         @keyframes moveBlob {
-            from { transform: translate(0, 0); }
-            to { transform: translate(50px, 50px); }
+            from {
+                transform: translate(0, 0);
+            }
+
+            to {
+                transform: translate(50px, 50px);
+            }
         }
 
         /* --- FOTO DE PERFIL --- */
@@ -118,13 +133,13 @@
             height: 280px;
             margin: 0 auto;
         }
-        
+
         .profile-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             border-radius: 50%;
-            border: 4px solid rgba(255,255,255,0.1);
+            border: 4px solid rgba(255, 255, 255, 0.1);
             position: relative;
             z-index: 2;
         }
@@ -145,30 +160,41 @@
         }
 
         @keyframes pulseGlow {
-            from { opacity: 0.5; transform: translate(-50%, -50%) scale(0.95); }
-            to { opacity: 0.8; transform: translate(-50%, -50%) scale(1.05); }
+            from {
+                opacity: 0.5;
+                transform: translate(-50%, -50%) scale(0.95);
+            }
+
+            to {
+                opacity: 0.8;
+                transform: translate(-50%, -50%) scale(1.05);
+            }
         }
 
         /* --- PORTFOLIO IMAGENS (Atualizado para Prints) --- */
         .project-img-wrapper {
-            height: 220px; /* Altura fixa do cartão */
+            height: 220px;
+            /* Altura fixa do cartão */
             overflow: hidden;
             border-radius: 16px 16px 0 0;
             position: relative;
             background-color: #0f172a;
         }
-        
+
         .project-thumb {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Cobre todo o espaço */
-            object-position: top center; /* FOCA NO TOPO DO SITE (Menu/Header) */
+            object-fit: cover;
+            /* Cobre todo o espaço */
+            object-position: top center;
+            /* FOCA NO TOPO DO SITE (Menu/Header) */
             transition: transform 0.5s ease;
             opacity: 0.9;
         }
-        
+
         a.card-link:hover .project-thumb {
-            transform: scale(1.05); /* Zoom suave ao passar o mouse */
+            transform: scale(1.05);
+            /* Zoom suave ao passar o mouse */
             opacity: 1;
         }
 
@@ -190,9 +216,46 @@
             z-index: 999;
             transition: transform 0.3s;
         }
-        .zap-float:hover { transform: scale(1.1); color: white; }
+
+        .zap-float:hover {
+            transform: scale(1.1);
+            color: white;
+        }
+
+        /* --- SWIPER CUSTOMIZATION --- */
+        .swiper {
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 80%;
+            /* Responsive width for mobile */
+            border-radius: 15px;
+            opacity: 0.3;
+            /* Transparent by default */
+            transition: all 0.5s ease;
+        }
+
+        /* Desktop specific slide width */
+        @media (min-width: 768px) {
+            .swiper-slide {
+                width: 500px;
+            }
+        }
+
+        .swiper-slide-active {
+            opacity: 1;
+            /* Fully visible when active */
+            z-index: 10;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+        }
     </style>
 </head>
+
 <body>
 
     <div class="blob"></div>
@@ -210,7 +273,8 @@
                     <li class="nav-item"><a class="nav-link text-light" href="#portfolio">Projetos</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="#sobre">Sobre</a></li>
                     <li class="nav-item ms-lg-3">
-                        <a href="https://wa.me/5574998125314" class="btn btn-outline-light rounded-pill px-4">Falar no Zap</a>
+                        <a href="https://wa.me/5574998125314" class="btn btn-outline-light rounded-pill px-4">Falar no
+                            Zap</a>
                     </li>
                 </ul>
             </div>
@@ -229,7 +293,8 @@
                         Tenha uma <span class="text-gradient">Máquina de Vendas.</span>
                     </h1>
                     <p class="lead text-gray mb-5">
-                        Desenvolvo Landing Pages de alta conversão e Sistemas Web que transformam visitantes em clientes. Design premium, velocidade máxima e foco em resultado.
+                        Desenvolvo Landing Pages de alta conversão e Sistemas Web que transformam visitantes em
+                        clientes. Design premium, velocidade máxima e foco em resultado.
                     </p>
                     <div class="d-flex gap-3">
                         <a href="#portfolio" class="btn btn-glow">Ver Portfólio</a>
@@ -239,7 +304,8 @@
                 <div class="col-lg-5 text-center mt-5 mt-lg-0" data-aos="fade-left">
                     <div class="profile-frame">
                         <div class="profile-glow"></div>
-                        <img src="perfil.jpg" alt="Cleriston Jr." class="profile-img" onerror="this.src='https://cdn-icons-png.flaticon.com/512/4140/4140048.png'">
+                        <img src="img/perfil.jpg" alt="Cleriston Jr." class="profile-img"
+                            onerror="this.src='https://cdn-icons-png.flaticon.com/512/4140/4140048.png'">
                     </div>
                     <div class="mt-4 text-center">
                         <h5 class="fw-bold m-0">Cleriston Jr.</h5>
@@ -261,21 +327,24 @@
                     <div class="glass-card p-4">
                         <i class="fas fa-rocket fa-3x text-gradient mb-4"></i>
                         <h4 class="fw-bold">Landing Pages</h4>
-                        <p class="text-gray">Páginas únicas, desenhadas psicologicamente para vender. Carregamento ultra-rápido e botões de WhatsApp estratégicos.</p>
+                        <p class="text-gray">Páginas únicas, desenhadas psicologicamente para vender. Carregamento
+                            ultra-rápido e botões de WhatsApp estratégicos.</p>
                     </div>
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="glass-card p-4">
                         <i class="fas fa-laptop-code fa-3x text-gradient mb-4"></i>
                         <h4 class="fw-bold">Sites Institucionais</h4>
-                        <p class="text-gray">Eleve a autoridade da sua marca. Um site institucional moderno, responsivo (mobile-first) e pronto para o Google (SEO).</p>
+                        <p class="text-gray">Eleve a autoridade da sua marca. Um site institucional moderno, responsivo
+                            (mobile-first) e pronto para o Google (SEO).</p>
                     </div>
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
                     <div class="glass-card p-4">
                         <i class="fas fa-cogs fa-3x text-gradient mb-4"></i>
                         <h4 class="fw-bold">Sistemas Web</h4>
-                        <p class="text-gray">Dashboard, painéis administrativos e automações. Soluções complexas simplificadas com tecnologia de ponta.</p>
+                        <p class="text-gray">Dashboard, painéis administrativos e automações. Soluções complexas
+                            simplificadas com tecnologia de ponta.</p>
                     </div>
                 </div>
             </div>
@@ -292,62 +361,135 @@
                 <span class="text-gray small d-none d-md-block">Clique nos cartões para visitar os sites</span>
             </div>
 
-            <div class="row g-4">
-                
-                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
-                    <a href="./escola" target="_blank" class="card-link" title="Visitar site">
-                        <div class="glass-card overflow-hidden">
-                            <div class="project-img-wrapper">
-                                <img src="print-escola.jpg" alt="Site Escola Infantil" class="project-thumb">
-                            </div>
-                            <div class="p-4">
-                                <div class="d-flex justify-content-between align-items-start mb-2">
-                                    <span class="badge bg-primary bg-opacity-10 text-primary">Identidade Visual</span>
-                                    <i class="fas fa-external-link-alt text-gray small"></i>
-                                </div>
-                                <h5 class="fw-bold">Escola Infantil Criativa</h5>
-                                <p class="text-gray small">Reformulação completa da comunicação visual e sinalização interna para ambiente educacional.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+            <!-- SWIPER CAROUSEL -->
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper py-5">
 
-                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
-                    <a href="./dentista" target="_blank" class="card-link" title="Visitar site">
-                        <div class="glass-card overflow-hidden">
-                            <div class="project-img-wrapper">
-                                <img src="print-dentista.jpg" alt="Site Dentista" class="project-thumb">
-                            </div>
-                            <div class="p-4">
-                                <div class="d-flex justify-content-between align-items-start mb-2">
-                                    <span class="badge bg-primary bg-opacity-10 text-primary">Landing Page</span>
-                                    <i class="fas fa-external-link-alt text-gray small"></i>
+                    <!-- Slide 1: Escola -->
+                    <div class="swiper-slide">
+                        <a href="./lps/escola" target="_blank" class="card-link" title="Visitar site">
+                            <div class="glass-card overflow-hidden h-100">
+                                <div class="project-img-wrapper">
+                                    <img src="img/print-escola.jpg" alt="Site Escola Infantil" class="project-thumb">
                                 </div>
-                                <h5 class="fw-bold">Dr. Sorriso Implantes</h5>
-                                <p class="text-gray small">Página de alta conversão focada em agendamento via WhatsApp para tratamentos de alto valor.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
-                    <a href="./refrigeracao" target="_blank" class="card-link" title="Visitar site">
-                        <div class="glass-card overflow-hidden">
-                            <div class="project-img-wrapper">
-                                <img src="print-refrigeracao.jpg" alt="Site Refrigeração" class="project-thumb">
-                            </div>
-                            <div class="p-4">
-                                <div class="d-flex justify-content-between align-items-start mb-2">
-                                    <span class="badge bg-primary bg-opacity-10 text-primary">Site Local</span>
-                                    <i class="fas fa-external-link-alt text-gray small"></i>
+                                <div class="p-4">
+                                    <div class="d-flex justify-content-between align-items-start mb-2">
+                                        <span class="badge bg-primary bg-opacity-10 text-primary">Identidade
+                                            Visual</span>
+                                        <i class="fas fa-external-link-alt text-gray small"></i>
+                                    </div>
+                                    <h5 class="fw-bold">Escola Infantil Criativa</h5>
+                                    <p class="text-gray small">Reformulação completa da comunicação visual e sinalização
+                                        interna.</p>
                                 </div>
-                                <h5 class="fw-bold">ClimaTec Refrigeração</h5>
-                                <p class="text-gray small">Site institucional otimizado para SEO local e Google Maps, aumentando chamados técnicos.</p>
                             </div>
-                        </div>
-                    </a>
-                </div>
+                        </a>
+                    </div>
 
+                    <!-- Slide 2: Dentista -->
+                    <div class="swiper-slide">
+                        <a href="./lps/dentista" target="_blank" class="card-link" title="Visitar site">
+                            <div class="glass-card overflow-hidden h-100">
+                                <div class="project-img-wrapper">
+                                    <img src="img/print-dentista.jpg" alt="Site Dentista" class="project-thumb">
+                                </div>
+                                <div class="p-4">
+                                    <div class="d-flex justify-content-between align-items-start mb-2">
+                                        <span class="badge bg-primary bg-opacity-10 text-primary">Landing Page</span>
+                                        <i class="fas fa-external-link-alt text-gray small"></i>
+                                    </div>
+                                    <h5 class="fw-bold">Dr. Sorriso Implantes</h5>
+                                    <p class="text-gray small">Página de alta conversão focada em agendamento via
+                                        WhatsApp.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Slide 3: Refrigeração -->
+                    <div class="swiper-slide">
+                        <a href="./lps/refrigeracao" target="_blank" class="card-link" title="Visitar site">
+                            <div class="glass-card overflow-hidden h-100">
+                                <div class="project-img-wrapper">
+                                    <img src="img/print-refrigeracao.jpg" alt="Site Refrigeração" class="project-thumb">
+                                </div>
+                                <div class="p-4">
+                                    <div class="d-flex justify-content-between align-items-start mb-2">
+                                        <span class="badge bg-primary bg-opacity-10 text-primary">Site Local</span>
+                                        <i class="fas fa-external-link-alt text-gray small"></i>
+                                    </div>
+                                    <h5 class="fw-bold">ClimaTec Refrigeração</h5>
+                                    <p class="text-gray small">Site institucional otimizado para SEO local e Google
+                                        Maps.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Slide 4: Advogado -->
+                    <div class="swiper-slide">
+                        <a href="./lps/advogado/index.html" target="_blank" class="card-link" title="Visitar site">
+                            <div class="glass-card overflow-hidden h-100">
+                                <div class="project-img-wrapper">
+                                    <img src="img/print-advogado.jpg" alt="Site Advogado" class="project-thumb">
+                                </div>
+                                <div class="p-4">
+                                    <div class="d-flex justify-content-between align-items-start mb-2">
+                                        <span class="badge bg-primary bg-opacity-10 text-primary">Direito</span>
+                                        <i class="fas fa-external-link-alt text-gray small"></i>
+                                    </div>
+                                    <h5 class="fw-bold">Ricardo Silva Advocacia</h5>
+                                    <p class="text-gray small">Site institucional sóbrio e elegante para escritório de
+                                        advocacia.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Slide 5: Nutricionista -->
+                    <div class="swiper-slide">
+                        <a href="./lps/nutricionista/index.html" target="_blank" class="card-link" title="Visitar site">
+                            <div class="glass-card overflow-hidden h-100">
+                                <div class="project-img-wrapper">
+                                    <img src="img/print-nutri.jpg" alt="Site Nutricionista" class="project-thumb">
+                                </div>
+                                <div class="p-4">
+                                    <div class="d-flex justify-content-between align-items-start mb-2">
+                                        <span class="badge bg-primary bg-opacity-10 text-primary">Saúde</span>
+                                        <i class="fas fa-external-link-alt text-gray small"></i>
+                                    </div>
+                                    <h5 class="fw-bold">NutriLife Bem-Estar</h5>
+                                    <p class="text-gray small">Landing Page leve e moderna focada em conversão.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Slide 6: Personal Trainer -->
+                    <div class="swiper-slide">
+                        <a href="./lps/personal-trainer/index.html" target="_blank" class="card-link"
+                            title="Visitar site">
+                            <div class="glass-card overflow-hidden h-100">
+                                <div class="project-img-wrapper">
+                                    <img src="img/print-traning.jpg" alt="Site Personal Trainer" class="project-thumb">
+                                </div>
+                                <div class="p-4">
+                                    <div class="d-flex justify-content-between align-items-start mb-2">
+                                        <span class="badge bg-primary bg-opacity-10 text-primary">Fitness</span>
+                                        <i class="fas fa-external-link-alt text-gray small"></i>
+                                    </div>
+                                    <h5 class="fw-bold">Coach Max Performance</h5>
+                                    <p class="text-gray small">Design agressivo e energético (Dark Mode).</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="swiper-pagination"></div>
+                <!-- Navigation Arrows -->
+                <div class="swiper-button-next text-white"></div>
+                <div class="swiper-button-prev text-white"></div>
             </div>
         </div>
     </section>
@@ -359,10 +501,13 @@
                     <div class="col-md-6 mb-4 mb-md-0">
                         <h2 class="fw-bold mb-4">Sobre Mim</h2>
                         <p class="text-gray mb-4">
-                            Sou <strong class="text-light">Cleriston Jr.</strong>, um desenvolvedor apaixonado por resolver problemas reais. Com 10 anos de experiência em tecnologia, minha missão saiu do suporte técnico para o desenvolvimento de soluções que alavancam negócios.
+                            Sou <strong class="text-light">Cleriston Jr.</strong>, um desenvolvedor apaixonado por
+                            resolver problemas reais. Com 10 anos de experiência em tecnologia, minha missão saiu do
+                            suporte técnico para o desenvolvimento de soluções que alavancam negócios.
                         </p>
                         <p class="text-gray mb-4">
-                            Não entrego apenas código. Entrego estratégia, performance e um parceiro tecnológico que entende que o seu site precisa pagar as contas e gerar lucro.
+                            Não entrego apenas código. Entrego estratégia, performance e um parceiro tecnológico que
+                            entende que o seu site precisa pagar as contas e gerar lucro.
                         </p>
                         <div class="d-flex gap-4 text-primary fs-4">
                             <i class="fab fa-js" title="JavaScript"></i>
@@ -386,24 +531,86 @@
     <footer class="py-5 text-center mt-5" style="border-top: 1px solid rgba(255,255,255,0.05);">
         <div class="container">
             <h2 class="fw-bold mb-4">Vamos construir algo incrível?</h2>
-            <a href="https://wa.me/5574998125314?text=Ol%C3%A1,%20quero%20um%20or%C3%A7amento%20para%20meu%20site." class="btn btn-glow btn-lg px-5">Solicitar Orçamento</a>
-            
+            <a href="https://wa.me/5574998125314?text=Ol%C3%A1,%20quero%20um%20or%C3%A7amento%20para%20meu%20site."
+                class="btn btn-glow btn-lg px-5">Solicitar Orçamento</a>
+
             <div class="mt-5 d-flex justify-content-center gap-4">
-                <a href="https://www.linkedin.com/in/cleriston-j%C3%BAnior-ba419218b" target="_blank" class="text-gray hover-white"><i class="fab fa-linkedin fa-2x"></i></a>
-                <a href="mailto:cleristonjr1999@gmail.com" class="text-gray hover-white"><i class="fas fa-envelope fa-2x"></i></a>
+                <a href="https://www.linkedin.com/in/cleriston-j%C3%BAnior-ba419218b" target="_blank"
+                    class="text-gray hover-white"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="mailto:cleristonjr1999@gmail.com" class="text-gray hover-white"><i
+                        class="fas fa-envelope fa-2x"></i></a>
             </div>
             <p class="text-gray small mt-4 opacity-50">&copy; 2026 Cleriston Jr. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <a href="https://wa.me/5574998125314?text=Ol%C3%A1%20Cleriston,%20vi%20seu%20site%20e%20gostaria%20de%20saber%20mais." class="zap-float" target="_blank">
+    <a href="https://wa.me/5574998125314?text=Ol%C3%A1%20Cleriston,%20vi%20seu%20site%20e%20gostaria%20de%20saber%20mais."
+        class="zap-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            loop: true,
+            // Mobile defaults (lighter 3D)
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 0,
+                depth: 100, // Shallower depth for mobile
+                modifier: 1,
+                slideShadows: false,
+                scale: 0.85,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                // Mobile settings (inherits global, but explicit here for clarity)
+                320: {
+                    slidesPerView: "auto",
+                    coverflowEffect: {
+                        depth: 150,
+                        scale: 0.9,
+                    }
+                },
+                // Tablet
+                768: {
+                    slidesPerView: "auto",
+                    coverflowEffect: {
+                        depth: 200,
+                        scale: 0.8,
+                    }
+                },
+                // Desktop - Restore the "Best" 3D look
+                1024: {
+                    slidesPerView: "auto",
+                    coverflowEffect: {
+                        rotate: 0,
+                        stretch: 0,
+                        depth: 350,   // Stronger depth
+                        modifier: 1,
+                        slideShadows: false,
+                        scale: 0.75, // Smaller background cards for more contrast
+                    }
+                },
+            }
+        });
+    </script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 1000, once: true, offset: 100 });
     </script>
 </body>
+
 </html>

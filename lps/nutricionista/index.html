@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriLife | Nutrição & Bem-Estar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Lato:wght@300;400&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-green: #4CAF50;
+            --dark-green: #2E7D32;
+            --light-cream: #FDFBF7;
+            --text-dark: #333;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--light-cream);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        .navbar-brand {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-green);
+        }
+
+        /* Navbar */
+        .navbar {
+            background: white;
+            padding: 1.5rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-green) !important;
+            letter-spacing: -1px;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-left: 1.5rem;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-green);
+        }
+
+        /* Buttons */
+        .btn-green {
+            background-color: var(--primary-green);
+            color: white;
+            border-radius: 50px;
+            padding: 12px 35px;
+            font-weight: 600;
+            border: none;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+            transition: all 0.3s;
+        }
+
+        .btn-green:hover {
+            background-color: var(--dark-green);
+            transform: translateY(-3px);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #e8f5e9 0%, #ffffff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-img {
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            overflow: hidden;
+            width: 100%;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            animation: morph 8s ease-in-out infinite;
+        }
+
+        @keyframes morph {
+            0% {
+                border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            }
+
+            50% {
+                border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            }
+
+            100% {
+                border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            }
+        }
+
+        /* Features */
+        .feature-box {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            height: 100%;
+            transition: all 0.3s;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: #e8f5e9;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary-green);
+            font-size: 2rem;
+        }
+
+        /* Testimonials */
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 5px solid var(--primary-green);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-green);
+            color: white;
+            padding: 3rem 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand fs-3" href="#"><i class="fas fa-leaf me-2"></i>NutriLife</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#metodo">O Método</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#depoimentos">Resultados</a></li>
+                    <li class="nav-item ms-3">
+                        <a href="#contato" class="btn btn-green">Começar Agora</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <span class="text-uppercase fw-bold text-success mb-2 d-block small">Nutrição sem terrorismo</span>
+                    <h1 class="display-3 fw-bold mb-4">Sua melhor versão começa no prato.</h1>
+                    <p class="lead text-muted mb-5">Ajudo você a conquistar saúde e autoestima através de uma
+                        alimentação equilibrada, sem dietas restritivas e feita para a sua rotina.</p>
+                    <a href="#contato" class="btn btn-green btn-lg">Quero Agendar Minha Consulta</a>
+                    <div class="mt-4 text-muted small">
+                        <i class="fas fa-check-circle text-success me-1"></i> Atendimento Online e Presencial
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-img text-center">
+                        <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=800&q=80"
+                            alt="Alimentação Saudável" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="metodo" class="py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Como funciona?</h2>
+                <p class="text-muted">Um processo focado em você e nas suas necessidades.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="feature-icon"><i class="fas fa-comments"></i></div>
+                        <h4>1. Anamnese Detalhada</h4>
+                        <p class="text-muted">Entendemos a sua rotina, preferências, dificuldades e objetivos em uma
+                            conversa leve.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="feature-icon"><i class="fas fa-clipboard-list"></i></div>
+                        <h4>2. Plano Personalizado</h4>
+                        <p class="text-muted">Nada de dieta de gaveta. Um plano alimentar montado exclusivamente para
+                            você.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+                        <h4>3. Acompanhamento</h4>
+                        <p class="text-muted">Suporte via WhatsApp e aplicativo próprio para tirar dúvidas e manter o
+                            foco.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="depoimentos" class="py-5 bg-white">
+        <div class="container py-5">
+            <h2 class="fw-bold text-center mb-5">Histórias de Sucesso</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="testimonial-card">
+                        <p class="fst-italic text-muted">"Aprendi a comer de tudo sem culpa. Perdi 10kg em 3 meses, mas
+                            o principal foi ganhar disposição pro dia a dia. Recomendo muito!"</p>
+                        <div class="d-flex align-items-center mt-3">
+                            <div class="fw-bold">Ana Clara</div>
+                            <div class="ms-auto text-warning">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="testimonial-card">
+                        <p class="fst-italic text-muted">"Como atleta amador, minha performance melhorou 100% depois dos
+                            ajustes na alimentação. Profissional excelente."</p>
+                        <div class="d-flex align-items-center mt-3">
+                            <div class="fw-bold">Carlos Eduardo</div>
+                            <div class="ms-auto text-warning">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="py-5" style="background-color: #e8f5e9;">
+        <div class="container py-5 text-center">
+            <h2 class="fw-bold mb-4">Vamos cuidar da sua saúde?</h2>
+            <p class="lead mb-5">Dê o primeiro passo para uma vida mais leve e saudável hoje mesmo.</p>
+            <a href="#" class="btn btn-green btn-lg px-5 shadow-lg"><i class="fab fa-whatsapp me-2"></i> Agendar
+                Consulta</a>
+        </div>
+    </section>
+
+    <footer class="text-center">
+        <div class="container">
+            <h4 class="fw-bold mb-4">NutriLife</h4>
+            <p class="mb-4 opacity-75">Nutrição com ciência e acolhimento.</p>
+            <div class="d-flex justify-content-center gap-3 mb-4">
+                <a href="#" class="text-white"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="#" class="text-white"><i class="fab fa-facebook fa-lg"></i></a>
+            </div>
+            <p class="small opacity-50 mb-0">&copy; 2026 NutriLife. Todos os direitos reservados. Design by Cleriston
+                Jr.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
