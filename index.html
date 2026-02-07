@@ -34,6 +34,7 @@
                     <li class="nav-item"><a class="nav-link text-light" href="#servicos">O que faço</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="#portfolio">Projetos</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="#sobre">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="#formulario">Contato</a></li>
                     <li class="nav-item ms-lg-3">
                         <a href="https://wa.me/5574998125314" class="btn btn-outline-light rounded-pill px-4">Falar no
                             Zap</a>
@@ -284,6 +285,48 @@
                         <hr class="border-secondary my-4">
                         <h3 class="display-4 fw-bold text-light">100%</h3>
                         <p class="text-gray text-uppercase ls-2">Foco no Cliente</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="formulario" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h6 class="text-primary fw-bold text-uppercase ls-2">Nos conte sobre seu projeto</h6>
+                <h2 class="fw-bold display-6">Preencha o formulário</h2>
+                <p class="text-gray mt-3">Compartilhe seus detalhes para que possamos entender melhor seu negócio</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-7" data-aos="fade-up">
+                    <div class="glass-card p-5">
+                        <form action="https://formsubmit.co/cleristonjr1999@gmail.com" method="POST" id="contactForm">
+                            <div class="mb-4">
+                                <label for="nome" class="form-label fw-bold">Nome Completo</label>
+                                <input type="text" class="form-control glass-input" id="nome" name="nome" placeholder="Seu nome completo" required>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="contato" class="form-label fw-bold">Contato</label>
+                                <input type="text" class="form-control glass-input" id="contato" name="contato" placeholder="WhatsApp ou Email" required>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="servico" class="form-label fw-bold">Qual é o seu serviço?</label>
+                                <textarea class="form-control glass-input" id="servico" name="servico" rows="3" placeholder="Descreva brevemente qual o seu negócio/serviço..." required></textarea>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="expectativas" class="form-label fw-bold">O que você espera do seu site?</label>
+                                <textarea class="form-control glass-input" id="expectativas" name="expectativas" rows="4" placeholder="Descreva suas expectativas, objetivos e o que espera alcançar com o site..." required></textarea>
+                            </div>
+
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_next" value="https://cleristonjr.github.io/LandPages/">
+                            <button type="submit" class="btn btn-glow w-100 py-3 fw-bold text-uppercase">Enviar Proposta</button>
+                        </form>
                     </div>
                 </div>
             </div>
