@@ -6,12 +6,12 @@
     <title>Dr. Andrey Mota | Fisioterapia Especializada</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --primary-color: #2E8B57; /* Verde Saúde - Combina com o logo do jaleco */
+            --primary-color: #2E8B57; /* Verde Saúde */
             --secondary-color: #f8f9fa;
             --text-dark: #333;
         }
@@ -33,34 +33,32 @@
             gap: 10px;
         }
 
-        /* Hero Section */
+        /* --- Hero Section Atualizada --- */
         .hero-section {
-            /* Imagem de fundo genérica de clínica limpa */
-            background: linear-gradient(rgba(46, 139, 87, 0.1), rgba(46, 139, 87, 0.05)), url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            padding: 120px 0 100px; /* Ajuste para navbar fixa */
-            min-height: 85vh;
+            /* Fundo limpo com gradiente suave */
+            background: linear-gradient(135deg, rgba(46, 139, 87, 0.05) 0%, rgba(255,255,255,1) 100%);
+            padding: 140px 0 80px; /* Espaço para navbar fixa */
+            min-height: 90vh;
             display: flex;
             align-items: center;
         }
         
-        .hero-content {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            border-left: 5px solid var(--primary-color);
+        .hero-image-container img {
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(46, 139, 87, 0.15);
+            /* Efeito de 'flutuar' */
+            transform: perspective(1000px) rotateY(-5deg);
+            transition: transform 0.5s ease;
+        }
+        .hero-image-container img:hover {
+            transform: perspective(1000px) rotateY(0deg) scale(1.02);
         }
 
-        /* Foto do Dr. no Sobre */
+        /* Foto no Sobre (Mantida para referência, se quiser usar outra) */
         .about-img-container img {
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(46, 139, 87, 0.2);
-            /* Garante que a foto se adapte bem */
             object-fit: cover;
-            width: 100%;
-            max-height: 600px; 
         }
 
         /* Cards de Serviços */
@@ -70,10 +68,12 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             height: 100%;
             border-radius: 12px;
+            background: #fff;
         }
         .service-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(46, 139, 87, 0.15);
+            border-bottom: 3px solid var(--primary-color);
         }
         .icon-box {
             font-size: 2.5rem;
@@ -94,7 +94,7 @@
         .btn-primary-custom {
             background-color: var(--primary-color);
             color: white;
-            padding: 12px 30px;
+            padding: 12px 35px;
             border-radius: 50px;
             border: none;
             font-weight: 600;
@@ -105,7 +105,7 @@
             background-color: #246b43;
             color: white;
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(46, 139, 87, 0.4);
+            box-shadow: 0 8px 25px rgba(46, 139, 87, 0.4);
         }
 
         /* WhatsApp Button Flutuante */
@@ -116,38 +116,34 @@
             background-color: #25d366;
             color: white;
             border-radius: 50px;
-            padding: 15px 20px;
-            font-size: 1.5rem;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            padding: 12px 15px;
+            font-size: 1.8rem;
+            box-shadow: 2px 2px 15px rgba(0,0,0,0.15);
             z-index: 1000;
             transition: all 0.3s;
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 10px;
+            justify-content: center;
         }
         .whatsapp-float:hover {
             background-color: #1ebe57;
-            color: white;
             transform: scale(1.1);
-        }
-        .whatsapp-text {
-            font-size: 1rem;
-            font-weight: 600;
-            display: none;
-        }
-        .whatsapp-float:hover .whatsapp-text {
-            display: block;
         }
 
         /* Responsividade */
         @media (max-width: 991px) {
             .hero-section {
                 text-align: center;
-                padding: 150px 0 80px;
+                padding: 120px 0 60px;
+                height: auto;
             }
-            .about-img-container {
-                margin-bottom: 30px;
+            .hero-image-container {
+                margin-top: 40px;
+            }
+            .hero-image-container img {
+                 transform: none; /* Remove efeito 3D no mobile */
+                 max-width: 80%;
             }
         }
     </style>
@@ -180,13 +176,14 @@
     <section id="inicio" class="hero-section">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-7">
-                    <div class="hero-content">
-                        <h1 class="display-4 fw-bold mb-3">Sua saúde em movimento, sem dor.</h1>
-                        <p class="lead mb-4">Atendimento fisioterapêutico personalizado com Dr. Andrey Mota. Combinamos técnicas manuais avançadas e tecnologia para devolver sua qualidade de vida e performance.</p>
+                <div class="col-lg-6 order-2 order-lg-1">
+                    <div class="pe-lg-5">
+                        <h6 class="text-uppercase text-primary fw-bold ls-2 mb-3">Fisioterapia Especializada</h6>
+                        <h1 class="display-4 fw-bold mb-4">Sua saúde em movimento, <span class="text-primary">sem dor</span>.</h1>
+                        <p class="lead text-muted mb-5">Recupere sua qualidade de vida e performance com um tratamento personalizado. Combinamos técnicas manuais avançadas e tecnologia para resultados rápidos e duradouros.</p>
                         <div class="d-flex gap-3 flex-column flex-sm-row justify-content-center justify-content-lg-start">
-                            <a href="https://wa.me/5574000000000" target="_blank" class="btn btn-primary-custom btn-lg">
-                                <i class="bi bi-whatsapp"></i> Agendar Avaliação
+                            <a href="https://wa.me/5574000000000" target="_blank" class="btn btn-primary-custom btn-lg d-flex align-items-center justify-content-center gap-2">
+                                <i class="bi bi-whatsapp fs-5"></i> Agendar Avaliação
                             </a>
                             <a href="#servicos" class="btn btn-outline-dark btn-lg rounded-pill px-4">
                                 Conhecer Tratamentos
@@ -194,47 +191,56 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-6 order-1 order-lg-2 mb-5 mb-lg-0">
+                    <div class="hero-image-container">
+                        <img src="img/dr-andrey-mota.png" alt="Dr. Andrey Mota Fisioterapeuta" class="img-fluid">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="sobre" class="py-5">
+    <section id="sobre" class="py-5 bg-light">
         <div class="container py-5">
-            <div class="row align-items-center">
-                <div class="col-lg-5 mb-4 mb-lg-0">
-                    <div class="about-img-container">
-                        <img src="fisioterapeuta.png" alt="Dr. Andrey Mota Fisioterapeuta" class="img-fluid">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="text-center mb-5">
+                         <h6 class="text-uppercase text-primary fw-bold ls-2">Sobre o Profissional</h6>
+                         <h2 class="fw-bold display-6">Dr. Andrey Mota</h2>
                     </div>
-                </div>
-                <div class="col-lg-7 ps-lg-5">
-                    <h6 class="text-uppercase text-primary fw-bold ls-2">Sobre o Profissional</h6>
-                    <h2 class="mb-4 fw-bold display-6">Dr. Andrey Mota</h2>
-                    <p class="lead text-muted fst-italic mb-4">"Meu objetivo não é apenas tratar a dor, mas entender a causa e devolver a funcionalidade plena ao paciente."</p>
-                    <p class="text-muted mb-4">Com formação sólida e atualização constante, dedico-me a oferecer um tratamento humanizado e baseado em evidências científicas. Minha abordagem integra terapia manual, cinesioterapia e recursos tecnológicos para garantir uma reabilitação eficiente, seja para retorno ao esporte ou para as atividades diárias.</p>
+                    <div class="row align-items-center">
+                        <div class="col-lg-12">
+                            <p class="lead text-muted fst-italic text-center mb-5 px-lg-5">"Meu objetivo não é apenas tratar a dor, mas entender a causa raiz e devolver a funcionalidade plena ao paciente, seja no esporte ou na vida diária."</p>
+                        </div>
+                    </div>
                     
-                    <div class="row mt-4 gy-3">
-                        <div class="col-md-6">
-                            <div class="d-flex align-items-center p-3 bg-light rounded-3 h-100">
-                                <i class="bi bi-patch-check-fill text-primary fs-4 me-3"></i>
-                                <span class="fw-semibold">Fisioterapia Esportiva</span>
+                    <div class="row mt-4 gy-4">
+                        <div class="col-md-6 col-lg-3">
+                            <div class="text-center p-4 bg-white rounded-3 shadow-sm h-100">
+                                <i class="bi bi-mortarboard-fill text-primary fs-1 mb-3"></i>
+                                <h5 class="fw-bold">Formação Sólida</h5>
+                                <p class="text-muted small mb-0">Atualização constante com as melhores evidências científicas.</p>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="d-flex align-items-center p-3 bg-light rounded-3 h-100">
-                                <i class="bi bi-house-heart-fill text-primary fs-4 me-3"></i>
-                                <span class="fw-semibold">Atendimento Domiciliar Premium</span>
+                         <div class="col-md-6 col-lg-3">
+                            <div class="text-center p-4 bg-white rounded-3 shadow-sm h-100">
+                                <i class="bi bi-person-arms-up text-primary fs-1 mb-3"></i>
+                                <h5 class="fw-bold">Terapia Manual</h5>
+                                <p class="text-muted small mb-0">Técnicas especializadas para alívio da dor e ganho de movimento.</p>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                             <div class="d-flex align-items-center p-3 bg-light rounded-3 h-100">
-                                <i class="bi bi-person-arms-up text-primary fs-4 me-3"></i>
-                                <span class="fw-semibold">Terapia Manual e Miofascial</span>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="text-center p-4 bg-white rounded-3 shadow-sm h-100">
+                                <i class="bi bi-clipboard-data-fill text-primary fs-1 mb-3"></i>
+                                <h5 class="fw-bold">Avaliação Biomecânica</h5>
+                                <p class="text-muted small mb-0">Análise detalhada para identificar e corrigir padrões de movimento.</p>
                             </div>
                         </div>
-                         <div class="col-md-6">
-                             <div class="d-flex align-items-center p-3 bg-light rounded-3 h-100">
-                                <i class="bi bi-clipboard2-pulse-fill text-primary fs-4 me-3"></i>
-                                <span class="fw-semibold">Avaliação Biomecânica</span>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="text-center p-4 bg-white rounded-3 shadow-sm h-100">
+                                <i class="bi bi-house-heart-fill text-primary fs-1 mb-3"></i>
+                                <h5 class="fw-bold">Atendimento Premium</h5>
+                                <p class="text-muted small mb-0">No consultório ou no conforto da sua casa, com total dedicação.</p>
                             </div>
                         </div>
                     </div>
@@ -243,13 +249,13 @@
         </div>
     </section>
 
-    <section id="servicos" class="py-5 bg-light">
+    <section id="servicos" class="py-5">
         <div class="container py-5">
              <div class="row justify-content-center text-center mb-5">
                 <div class="col-lg-8">
                     <h6 class="text-uppercase text-primary fw-bold ls-2">Especialidades</h6>
                     <h2 class="fw-bold display-6 mb-3">Como posso te ajudar hoje?</h2>
-                    <p class="text-muted lead">Tratamentos focados na sua necessidade específica.</p>
+                    <p class="text-muted lead">Tratamentos personalizados focados na sua necessidade.</p>
                 </div>
             </div>
             
@@ -257,10 +263,10 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="card service-card p-4 text-center">
                         <div class="icon-box">
-                            <i class="bi bi-person-walking"></i>
+                            <i class="bi bi-bone"></i>
                         </div>
                         <h4 class="card-title h5 fw-bold mb-3">Reabilitação Ortopédica</h4>
-                        <p class="card-text text-muted">Tratamento eficaz para dores na coluna, hérnias de disco, tendinites, bursites e recuperação de fraturas.</p>
+                        <p class="card-text text-muted">Tratamento para dores na coluna, hérnias, tendinites, bursites e recuperação de fraturas e lesões.</p>
                     </div>
                 </div>
                 
@@ -269,18 +275,18 @@
                         <div class="icon-box">
                             <i class="bi bi-lightning-charge-fill"></i>
                         </div>
-                        <h4 class="card-title h5 fw-bold mb-3">Fisioterapia Esportiva e Recovery</h4>
-                        <p class="card-text text-muted">Prevenção de lesões, tratamento de atletas amadores e profissionais, e estratégias de recovery pós-treino.</p>
+                        <h4 class="card-title h5 fw-bold mb-3">Fisioterapia Esportiva</h4>
+                        <p class="card-text text-muted">Prevenção de lesões, reabilitação de atletas e estratégias de recovery para otimizar a performance.</p>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-4">
                     <div class="card service-card p-4 text-center">
                         <div class="icon-box">
-                            <i class="bi bi-bandaid-fill"></i>
+                            <i class="bi bi-clipboard-pulse"></i>
                         </div>
                         <h4 class="card-title h5 fw-bold mb-3">Pós-Operatório Especializado</h4>
-                        <p class="card-text text-muted">Protocolos acelerados e seguros para cirurgias de LCA, menisco, manguito rotador e próteses.</p>
+                        <p class="card-text text-muted">Protocolos seguros e acelerados para cirurgias de LCA, menisco, manguito rotador e próteses.</p>
                     </div>
                 </div>
                 
@@ -289,21 +295,124 @@
                         <div class="icon-box">
                             <i class="bi bi-hand-index-thumb-fill"></i>
                         </div>
-                        <h4 class="card-title h5 fw-bold mb-3">Liberação Miofascial Instrumental</h4>
-                        <p class="card-text text-muted">Uso de técnicas manuais e ventosas para alívio imediato de tensões musculares e pontos gatilho.</p>
+                        <h4 class="card-title h5 fw-bold mb-3">Liberação Miofascial</h4>
+                        <p class="card-text text-muted">Técnicas manuais e instrumentais para alívio imediato de dores, tensões musculares e pontos gatilho.</p>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-4">
                     <div class="card service-card p-4 text-center">
                         <div class="icon-box">
-                            <i class="bi bi-house-heart-fill"></i>
+                            <i class="bi bi-house-door-fill"></i>
                         </div>
                         <h4 class="card-title h5 fw-bold mb-3">Atendimento Domiciliar</h4>
-                        <p class="card-text text-muted">A qualidade do consultório no conforto da sua casa. Levamos todos os equipamentos necessários.</p>
+                        <p class="card-text text-muted">A mesma qualidade do consultório no conforto e praticidade da sua casa, com equipamentos portáteis.</p>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-4">
                     <div class="card service-card p-4 text-center">
                         <div class="icon-box">
+                             <i class="bi bi-person-cane"></i>
+                        </div>
+                        <h4 class="card-title h5 fw-bold mb-3">Saúde do Idoso (Gerontologia)</h4>
+                        <p class="card-text text-muted">Foco na melhoria do equilíbrio, fortalecimento muscular e prevenção de quedas para um envelhecimento ativo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="depoimentos" class="py-5 bg-light">
+        <div class="container py-5">
+            <h2 class="text-center fw-bold display-6 mb-5">O que dizem os pacientes</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow-sm p-5 bg-white position-relative">
+                        <i class="bi bi-quote position-absolute top-0 start-0 translate-middle fs-1 text-primary opacity-25 ms-5 mt-5"></i>
+                        <div id="carouselTestimonials" class="carousel slide text-center" data-bs-ride="carousel">
+                            <div class="carousel-inner pb-4">
+                                <div class="carousel-item active">
+                                    <p class="lead fst-italic text-muted mb-4">"Cheguei travado da coluna e com muita dor. O atendimento do Dr. Andrey foi espetacular. Em poucas sessões já estava sem dor e com minha mobilidade de volta. Recomendo de olhos fechados!"</p>
+                                    <h5 class="fw-bold">- Ricardo Ramos</h5>
+                                    <div class="text-warning mt-2">
+                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <p class="lead fst-italic text-muted mb-4">"Fiz meu pós-operatório de joelho com ele e a recuperação foi muito mais rápida do que eu esperava. Profissional muito atencioso e técnico. Excelente!"</p>
+                                    <h5 class="fw-bold">- Ana Clara Martins</h5>
+                                    <div class="text-warning mt-2">
+                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-3 d-flex justify-content-center gap-2">
+                                <button class="btn btn-outline-primary btn-sm rounded-circle p-2 lh-1" type="button" data-bs-target="#carouselTestimonials" data-bs-slide="prev">
+                                    <i class="bi bi-chevron-left"></i>
+                                </button>
+                                <button class="btn btn-outline-primary btn-sm rounded-circle p-2 lh-1" type="button" data-bs-target="#carouselTestimonials" data-bs-slide="next">
+                                    <i class="bi bi-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contato" class="bg-dark text-white pt-5 pb-3">
+        <div class="container pt-4">
+            <div class="row justify-content-between mb-5">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <a class="navbar-brand text-white mb-3 d-block" href="#">
+                        <i class="bi bi-activity fs-3 me-2"></i> Dr. Andrey Mota
+                    </a>
+                    <p class="text-white-50">Fisioterapia especializada e personalizada para você viver sem dor e atingir seu máximo potencial.</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="#" class="text-white fs-5"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="bi bi-linkedin"></i></a>
+                        <a href="mailto:contato@drandrey.com" class="text-white fs-5"><i class="bi bi-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 mb-4 mb-lg-0">
+                    <h5 class="text-white mb-3">Links Rápidos</h5>
+                    <ul class="list-unstyled text-white-50">
+                        <li><a href="#inicio" class="text-decoration-none text-white-50 pb-2 d-block">Início</a></li>
+                        <li><a href="#sobre" class="text-decoration-none text-white-50 pb-2 d-block">Sobre</a></li>
+                        <li><a href="#servicos" class="text-decoration-none text-white-50 pb-2 d-block">Serviços</a></li>
+                        <li><a href="#depoimentos" class="text-decoration-none text-white-50 pb-2 d-block">Depoimentos</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="text-white mb-3">Contato & Localização</h5>
+                    <ul class="list-unstyled text-white-50">
+                        <li class="d-flex align-items-start mb-3">
+                            <i class="bi bi-geo-alt me-3 fs-5 flex-shrink-0"></i>
+                            <span>Jacobina - BA<br>(Atendimento em Consultório e Domiciliar)</span>
+                        </li>
+                         <li class="d-flex align-items-center mb-3">
+                            <i class="bi bi-whatsapp me-3 fs-5 flex-shrink-0"></i>
+                            <a href="https://wa.me/5574000000000" target="_blank" class="text-white-50 text-decoration-none">(74) 00000-0000</a>
+                        </li>
+                        <li class="d-flex align-items-start">
+                            <i class="bi bi-clock me-3 fs-5 flex-shrink-0"></i>
+                            <span>Seg a Sex: 08h às 19h<br>Sáb: Sob agendamento</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-top border-secondary py-3 text-center">
+                <small class="text-white-50">&copy; 2026 Dr. Andrey Mota. Todos os direitos reservados.</small>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5574000000000" class="whatsapp-float" target="_blank" title="Agendar no WhatsApp">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
