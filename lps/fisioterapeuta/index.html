@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Nome do Fisioterapeuta | Reabilitação e Performance</title>
+    <title>Dr. Andrey Mota | Fisioterapia Especializada</title>
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --primary-color: #2E8B57; /* Verde Saúde */
+            --primary-color: #2E8B57; /* Verde Saúde - Combina com o logo do jaleco */
             --secondary-color: #f8f9fa;
             --text-dark: #333;
         }
@@ -27,41 +28,66 @@
         .navbar-brand {
             font-weight: 700;
             color: var(--primary-color) !important;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         /* Hero Section */
         .hero-section {
+            /* Imagem de fundo genérica de clínica limpa */
             background: linear-gradient(rgba(46, 139, 87, 0.1), rgba(46, 139, 87, 0.05)), url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
-            padding: 100px 0;
-            min-height: 80vh;
+            padding: 120px 0 100px; /* Ajuste para navbar fixa */
+            min-height: 85vh;
             display: flex;
             align-items: center;
         }
         
         .hero-content {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             padding: 40px;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--primary-color);
+        }
+
+        /* Foto do Dr. no Sobre */
+        .about-img-container img {
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(46, 139, 87, 0.2);
+            /* Garante que a foto se adapte bem */
+            object-fit: cover;
+            width: 100%;
+            max-height: 600px; 
         }
 
         /* Cards de Serviços */
         .service-card {
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: none;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             height: 100%;
+            border-radius: 12px;
         }
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 30px rgba(46, 139, 87, 0.15);
         }
         .icon-box {
             font-size: 2.5rem;
             color: var(--primary-color);
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            background: rgba(46, 139, 87, 0.1);
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* Botões */
@@ -73,11 +99,13 @@
             border: none;
             font-weight: 600;
             transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(46, 139, 87, 0.3);
         }
         .btn-primary-custom:hover {
             background-color: #246b43;
             color: white;
-            transform: scale(1.05);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(46, 139, 87, 0.4);
         }
 
         /* WhatsApp Button Flutuante */
@@ -113,29 +141,35 @@
         }
 
         /* Responsividade */
-        @media (max-width: 768px) {
+        @media (max-width: 991px) {
             .hero-section {
                 text-align: center;
-                padding: 60px 0;
+                padding: 150px 0 80px;
+            }
+            .about-img-container {
+                margin-bottom: 30px;
             }
         }
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top py-3">
         <div class="container">
-            <a class="navbar-brand" href="#"><i class="bi bi-activity"></i> Fisioterapeuta Pro</a>
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-activity fs-3"></i> 
+                <span>Dr. Andrey Mota</span>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre Mim</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#servicos">Especialidades</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#depoimentos">Depoimentos</a></li>
-                    <li class="nav-item ms-lg-3">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="#inicio">Início</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="#sobre">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="#servicos">Tratamentos</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="#depoimentos">Depoimentos</a></li>
+                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
                         <a href="#contato" class="btn btn-primary-custom">Agendar Consulta</a>
                     </li>
                 </ul>
@@ -146,16 +180,16 @@
     <section id="inicio" class="hero-section">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6">
+                <div class="col-lg-7">
                     <div class="hero-content">
-                        <h1 class="display-4 fw-bold mb-3">Recupere sua mobilidade e viva sem dor</h1>
-                        <p class="lead mb-4">Fisioterapia especializada em reabilitação ortopédica e esportiva. Atendimento personalizado para devolver sua qualidade de vida.</p>
-                        <div class="d-flex gap-3 flex-column flex-sm-row">
-                            <a href="https://wa.me/5500000000000" class="btn btn-primary-custom">
+                        <h1 class="display-4 fw-bold mb-3">Sua saúde em movimento, sem dor.</h1>
+                        <p class="lead mb-4">Atendimento fisioterapêutico personalizado com Dr. Andrey Mota. Combinamos técnicas manuais avançadas e tecnologia para devolver sua qualidade de vida e performance.</p>
+                        <div class="d-flex gap-3 flex-column flex-sm-row justify-content-center justify-content-lg-start">
+                            <a href="https://wa.me/5574000000000" target="_blank" class="btn btn-primary-custom btn-lg">
                                 <i class="bi bi-whatsapp"></i> Agendar Avaliação
                             </a>
-                            <a href="#servicos" class="btn btn-outline-secondary rounded-pill px-4 py-2">
-                                Ver Tratamentos
+                            <a href="#servicos" class="btn btn-outline-dark btn-lg rounded-pill px-4">
+                                Conhecer Tratamentos
                             </a>
                         </div>
                     </div>
@@ -168,31 +202,39 @@
         <div class="container py-5">
             <div class="row align-items-center">
                 <div class="col-lg-5 mb-4 mb-lg-0">
-                    <img src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Fisioterapeuta" class="img-fluid rounded-3 shadow">
+                    <div class="about-img-container">
+                        <img src="fisioterapeuta.png" alt="Dr. Andrey Mota Fisioterapeuta" class="img-fluid">
+                    </div>
                 </div>
                 <div class="col-lg-7 ps-lg-5">
-                    <h6 class="text-uppercase text-primary fw-bold">Sobre Mim</h6>
-                    <h2 class="mb-4">Dr. [Nome do Profissional]</h2>
-                    <p class="text-muted">Com mais de 10 anos de experiência clínica, sou especialista em ajudar pacientes a superarem lesões e dores crônicas.</p>
-                    <p class="text-muted">Minha abordagem combina terapia manual, exercícios terapêuticos e tecnologia de ponta para garantir uma recuperação rápida e duradoura. Acredito que cada paciente é único, por isso desenvolvo planos de tratamento 100% personalizados.</p>
+                    <h6 class="text-uppercase text-primary fw-bold ls-2">Sobre o Profissional</h6>
+                    <h2 class="mb-4 fw-bold display-6">Dr. Andrey Mota</h2>
+                    <p class="lead text-muted fst-italic mb-4">"Meu objetivo não é apenas tratar a dor, mas entender a causa e devolver a funcionalidade plena ao paciente."</p>
+                    <p class="text-muted mb-4">Com formação sólida e atualização constante, dedico-me a oferecer um tratamento humanizado e baseado em evidências científicas. Minha abordagem integra terapia manual, cinesioterapia e recursos tecnológicos para garantir uma reabilitação eficiente, seja para retorno ao esporte ou para as atividades diárias.</p>
                     
-                    <div class="row mt-4">
-                        <div class="col-md-6 mb-3">
-                            <div class="d-flex align-items-center">
-                                <i class="bi bi-check-circle-fill text-primary me-2"></i>
-                                <span>Especialista em Ortopedia</span>
+                    <div class="row mt-4 gy-3">
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center p-3 bg-light rounded-3 h-100">
+                                <i class="bi bi-patch-check-fill text-primary fs-4 me-3"></i>
+                                <span class="fw-semibold">Fisioterapia Esportiva</span>
                             </div>
                         </div>
-                        <div class="col-md-6 mb-3">
-                            <div class="d-flex align-items-center">
-                                <i class="bi bi-check-circle-fill text-primary me-2"></i>
-                                <span>Atendimento Domiciliar</span>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center p-3 bg-light rounded-3 h-100">
+                                <i class="bi bi-house-heart-fill text-primary fs-4 me-3"></i>
+                                <span class="fw-semibold">Atendimento Domiciliar Premium</span>
                             </div>
                         </div>
-                        <div class="col-md-6 mb-3">
-                            <div class="d-flex align-items-center">
-                                <i class="bi bi-check-circle-fill text-primary me-2"></i>
-                                <span>Pós-operatório</span>
+                        <div class="col-md-6">
+                             <div class="d-flex align-items-center p-3 bg-light rounded-3 h-100">
+                                <i class="bi bi-person-arms-up text-primary fs-4 me-3"></i>
+                                <span class="fw-semibold">Terapia Manual e Miofascial</span>
+                            </div>
+                        </div>
+                         <div class="col-md-6">
+                             <div class="d-flex align-items-center p-3 bg-light rounded-3 h-100">
+                                <i class="bi bi-clipboard2-pulse-fill text-primary fs-4 me-3"></i>
+                                <span class="fw-semibold">Avaliação Biomecânica</span>
                             </div>
                         </div>
                     </div>
@@ -203,9 +245,12 @@
 
     <section id="servicos" class="py-5 bg-light">
         <div class="container py-5">
-            <div class="text-center mb-5">
-                <h6 class="text-uppercase text-primary fw-bold">Tratamentos</h6>
-                <h2 class="fw-bold">Como posso te ajudar?</h2>
+             <div class="row justify-content-center text-center mb-5">
+                <div class="col-lg-8">
+                    <h6 class="text-uppercase text-primary fw-bold ls-2">Especialidades</h6>
+                    <h2 class="fw-bold display-6 mb-3">Como posso te ajudar hoje?</h2>
+                    <p class="text-muted lead">Tratamentos focados na sua necessidade específica.</p>
+                </div>
             </div>
             
             <div class="row g-4">
@@ -214,137 +259,51 @@
                         <div class="icon-box">
                             <i class="bi bi-person-walking"></i>
                         </div>
-                        <h4 class="card-title mb-3">Reabilitação Ortopédica</h4>
-                        <p class="card-text text-muted">Tratamento para dores nas costas, hérnias, tendinites e recuperação de fraturas.</p>
+                        <h4 class="card-title h5 fw-bold mb-3">Reabilitação Ortopédica</h4>
+                        <p class="card-text text-muted">Tratamento eficaz para dores na coluna, hérnias de disco, tendinites, bursites e recuperação de fraturas.</p>
                     </div>
                 </div>
                 
                 <div class="col-md-6 col-lg-4">
                     <div class="card service-card p-4 text-center">
                         <div class="icon-box">
-                            <i class="bi bi-lightning-charge"></i>
+                            <i class="bi bi-lightning-charge-fill"></i>
                         </div>
-                        <h4 class="card-title mb-3">Fisioterapia Esportiva</h4>
-                        <p class="card-text text-muted">Prevenção e tratamento de lesões em atletas, com foco no retorno rápido ao esporte.</p>
+                        <h4 class="card-title h5 fw-bold mb-3">Fisioterapia Esportiva e Recovery</h4>
+                        <p class="card-text text-muted">Prevenção de lesões, tratamento de atletas amadores e profissionais, e estratégias de recovery pós-treino.</p>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-4">
                     <div class="card service-card p-4 text-center">
                         <div class="icon-box">
-                            <i class="bi bi-heart-pulse"></i>
+                            <i class="bi bi-bandaid-fill"></i>
                         </div>
-                        <h4 class="card-title mb-3">Pós-Operatório</h4>
-                        <p class="card-text text-muted">Acompanhamento especializado após cirurgias de joelho, ombro, quadril e coluna.</p>
+                        <h4 class="card-title h5 fw-bold mb-3">Pós-Operatório Especializado</h4>
+                        <p class="card-text text-muted">Protocolos acelerados e seguros para cirurgias de LCA, menisco, manguito rotador e próteses.</p>
                     </div>
                 </div>
                 
                 <div class="col-md-6 col-lg-4">
                     <div class="card service-card p-4 text-center">
                         <div class="icon-box">
-                            <i class="bi bi-emoji-smile"></i>
+                            <i class="bi bi-hand-index-thumb-fill"></i>
                         </div>
-                        <h4 class="card-title mb-3">Liberação Miofascial</h4>
-                        <p class="card-text text-muted">Técnica manual para alívio de tensões musculares e melhora da flexibilidade.</p>
+                        <h4 class="card-title h5 fw-bold mb-3">Liberação Miofascial Instrumental</h4>
+                        <p class="card-text text-muted">Uso de técnicas manuais e ventosas para alívio imediato de tensões musculares e pontos gatilho.</p>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-4">
                     <div class="card service-card p-4 text-center">
                         <div class="icon-box">
-                            <i class="bi bi-house-door"></i>
+                            <i class="bi bi-house-heart-fill"></i>
                         </div>
-                        <h4 class="card-title mb-3">Atendimento Domiciliar</h4>
-                        <p class="card-text text-muted">Levamos todo o equipamento necessário para realizar o tratamento no conforto da sua casa.</p>
+                        <h4 class="card-title h5 fw-bold mb-3">Atendimento Domiciliar</h4>
+                        <p class="card-text text-muted">A qualidade do consultório no conforto da sua casa. Levamos todos os equipamentos necessários.</p>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-4">
                     <div class="card service-card p-4 text-center">
                         <div class="icon-box">
-                            <i class="bi bi-bandaid"></i>
-                        </div>
-                        <h4 class="card-title mb-3">Pilates Clínico</h4>
-                        <p class="card-text text-muted">Exercícios para fortalecimento do core, melhora da postura e prevenção de dores.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="depoimentos" class="py-5">
-        <div class="container py-5">
-            <h2 class="text-center fw-bold mb-5">O que dizem meus pacientes</h2>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div id="carouselTestimonials" class="carousel slide text-center" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <p class="lead fst-italic">"Cheguei ao consultório sem conseguir andar direito devido a uma dor ciática. Em poucas sessões já estava retomando minha rotina. Profissional excelente!"</p>
-                                <h5 class="fw-bold mt-3">- Maria Silva</h5>
-                                <div class="text-warning">
-                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <p class="lead fst-italic">"O tratamento pós-cirúrgico do meu joelho foi impecável. A atenção aos detalhes e o cuidado fizeram toda a diferença na minha recuperação."</p>
-                                <h5 class="fw-bold mt-3">- João Souza</h5>
-                                <div class="text-warning">
-                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselTestimonials" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselTestimonials" data-bs-slide="next">
-                            <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contato" class="py-5 bg-dark text-white">
-        <div class="container py-5 text-center">
-            <h2 class="fw-bold mb-4">Pronto para viver sem dor?</h2>
-            <p class="lead mb-5">Agende sua avaliação hoje mesmo e comece seu tratamento.</p>
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="card text-dark p-4">
-                        <div class="row">
-                            <div class="col-md-6 mb-3 mb-md-0 border-end">
-                                <h5><i class="bi bi-geo-alt text-primary"></i> Localização</h5>
-                                <p>Rua da Saúde, 123 - Centro<br>Jacobina - BA</p>
-                            </div>
-                            <div class="col-md-6">
-                                <h5><i class="bi bi-clock text-primary"></i> Horários</h5>
-                                <p>Seg - Sex: 08:00 - 18:00<br>Sáb: 08:00 - 12:00</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-5">
-                        <a href="https://wa.me/5500000000000" class="btn btn-primary-custom btn-lg">
-                            <i class="bi bi-whatsapp"></i> Chamar no WhatsApp
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-black text-white py-4 text-center">
-        <div class="container">
-            <small>&copy; 2026 Dr. Fisioterapeuta. Todos os direitos reservados.</small>
-        </div>
-    </footer>
-
-    <a href="https://wa.me/5500000000000" class="whatsapp-float" target="_blank">
-        <i class="bi bi-whatsapp"></i>
-        <span class="whatsapp-text">Agendar</span>
-    </a>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
